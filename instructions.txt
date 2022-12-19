@@ -1,0 +1,9 @@
+I'm still a novice in git and github, so here are a few reminders for myself.
+
+1. If you never make changes to the remote repository, the workflow will be simpler.
+2. make you changes as normal, and then when you want to update the remote repo,
+3. navigate to the parent directory and type in the following commands:
+4. git add .
+5. git commit -m <message-in-quotes>
+6. git branch (to ensure you're on the main branch)
+7. git push -u origin main (I don't know what all this is but it works)

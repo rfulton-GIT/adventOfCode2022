@@ -1,8 +1,6 @@
 import numpy as np
 import time
 fname = "test.txt"
-# fname = "input.txt"
-# fname = "custom.txt"
 
 def set_costs(line):
     costs = [ [0]*4 for _ in range(4)]
@@ -79,6 +77,7 @@ def withmemo(minutes_left, robots, resources, recipes):
 time_limit = 3 # actually 24 but lowered for testing purposes
 print(time_limit)
 f = open(fname)
+
 lines = f.readlines()
 f.close()
 scores = []
@@ -86,25 +85,27 @@ times = []
 memo = dict()
 ORE,CLAY,OBSIDIAN, GEODE = range(4)
 
-for line in lines:
-    line = lines[0] #
-    print(line)
+recipe = set_costs(lines[0])
+f = open("test_data.txt")
+data = f.readlines()
+f.close()
 
-    recipe = set_costs(line)
-    robots = [1,4,2,1]
-    resources = [4,25,7,2]
-    print("Start after:",24-time_limit)
-    print("robot init:",robots)
-    print("resource init:",resources)
-    t1 = time.time()
+minutes = []
+robot_init = []
+resource_init = []
+answers = []
+final_minutes = []
+
+for line in data:
+    words = line.split("#")
+    minutes.append(eval(words[0]))
+    robot_init.append(eval(words[1]))
+    resource_init.append(eval(words[2]))
+    answers.append(eval(words[3]))
+    final_minutes.append(eval(words[4]))
+print(len(data))
+for i in range(-5,0):
     memo = dict()
-    ans = withmemo(time_limit, np.array(robots), np.array(resources), np.array(recipe))
-    t2 = time.time()
-    scores.append(ans)
-    times.append(round(t2-t1,2))
-    break #
+    print(f"expected: {recursive(final_minutes[i] - minutes[i], np.array(robot_init[i]), np.array(resource_init[i]), np.array(recipe))}, accepted: {answers[i]}")
 
-
-print(scores)
-print(times)
 

@@ -1,2 +1,2 @@
 # adventOfCode2022
-my solutions to the 2022 advent of code. Hopefully I will learn to use github.
+These are my solutions to the 2022 advent of code. I got stumped on day 19 of 25.

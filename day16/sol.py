@@ -2,7 +2,7 @@ import time
 
 fname = "mini.txt"
 fname = "test.txt"
-# fname = "input.txt"
+fname = "input.txt"
 f = open(fname)
 lines = f.readlines()
 class Node:
@@ -82,6 +82,7 @@ DP = [[[0 for position in range(len(g))] for config in range(subsets) ] for minu
 # it must be backwards for optimality
 # this takes 30*L*(2**L)
 for minute in range(time_limit - 1, -1,-1):
+    print(minute)
     for config in range(subsets):
         for position in range(len(g)):
             initial_benefit = net_pressure[config]

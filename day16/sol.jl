@@ -1,5 +1,5 @@
 println("Threads: ", Threads.nthreads())
-# Run with "julia -t {numThreads} sol.py" to run this file with numThreads threads.
+# Run with "julia -t {numThreads} sol.py" to run this file with numThreads threads
 fname = "mini.txt"
 fname = "test.txt"
 fname = "input.txt"
